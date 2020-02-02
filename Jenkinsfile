@@ -30,7 +30,7 @@ pipeline
                script
                 {
                // sh "cd docker-pipeline-demo"
-                docker.build('$buildname')
+                docker.build('$ecrhost/$buildname')
                 } 
             }
         }
