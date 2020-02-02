@@ -30,7 +30,7 @@ pipeline
                script
                 {
                // sh "cd docker-pipeline-demo"
-                docker.build('demo')
+                docker.build('$ecrhost')
                 } 
             }
         }
@@ -42,7 +42,7 @@ pipeline
                script
                 {
                // sh "cd docker-pipeline-demo"
-                sh("eval \$(aws ecr get-login --no-include-email --region ap-south-1) && docker push demo" )
+                sh("eval \$(aws ecr get-login --no-include-email --region ap-south-1) && docker push $ecrhost/$buildname" )
                 } 
             }
         }
