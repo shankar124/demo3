@@ -34,6 +34,18 @@ pipeline
                 } 
             }
         }
+       
+        stage ('Docker Push')
+        {
+            steps 
+            {
+               script
+                {
+               // sh "cd docker-pipeline-demo"
+                sh("eval \$(aws ecr get-login --no-include-email --region ap-south-1) && docker push $ecrhost" )
+                } 
+            }
+        }
     }
     
 }
