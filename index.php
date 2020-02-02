@@ -1,2 +1,2 @@
 <?php phpinfo();
-<h1> This is headings </h1> 
+<h1> This is heading </h1> 
